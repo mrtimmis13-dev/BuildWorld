@@ -3,6 +3,8 @@ import pygame
 from scripts import block
 from window import *
 from block import *
+from level_gen import *
+from level import *
 
 def main():
     pygame.init()
@@ -12,7 +14,9 @@ def main():
     running = True
     while running:
 
-        screen.blit(blocks.texture, (0, 0))
+        #screen.blit(grass.texture, (0, 0))
+        Create_Block(1, 1, grass.id)
+        Create_Block(2, 1, grass.id)
         pygame.display.update()
 
         for event in pygame.event.get():
@@ -24,4 +28,6 @@ def main():
                     running = False
                     pygame.quit()
 
-main()
+
+if __name__ == "__main__":
+    main()
