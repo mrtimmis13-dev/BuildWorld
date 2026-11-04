@@ -1,6 +1,6 @@
 import pygame
 
-BLOCK_SIZE = 64
+from config import *
 
 class Block:
     def __init__(self, name, texture, id):
@@ -9,12 +9,14 @@ class Block:
         self.texture = pygame.transform.scale(pygame.image.load(texture), (BLOCK_SIZE, BLOCK_SIZE))
         self.id = id
 
+air = Block("Air", "recources/assets/textures/blocks/grass.png", 0)
 grass = Block("Grass", "recources/assets/textures/blocks/grass.png", 1)
 dirt = Block("Dirt", "recources/assets/textures/blocks/grass.png", 2)
 stone = Block("Stone", "recources/assets/textures/blocks/grass.png", 3)
 
 Blocks = {
 
+    air.id: air,
     grass.id: grass,
     dirt.id: dirt,
     stone.id: stone

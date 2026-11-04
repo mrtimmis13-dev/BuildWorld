@@ -1,4 +1,5 @@
 import pygame
+from pygame import mouse
 
 from scripts import block
 from window import *
@@ -26,6 +27,12 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     running = False
                     pygame.quit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    print(mouse.get_pos())
+                elif event.button == 3:
+                    print(2)
 
 
 if __name__ == "__main__":
