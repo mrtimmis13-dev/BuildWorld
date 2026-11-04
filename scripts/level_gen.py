@@ -4,5 +4,6 @@ from block import *
 from level import *
 
 def Generate():
-    for x in range(0, 34):
-        Create_Block(x, 15, grass.id)
+    for y in range(0, 17):
+        for x in range(0, 17):
+            Create_Block(x, y, grass.id)
