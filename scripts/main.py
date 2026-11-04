@@ -15,8 +15,7 @@ def main():
     while running:
 
         #screen.blit(grass.texture, (0, 0))
-        Create_Block(1, 1, grass.id)
-        Create_Block(2, 1, grass.id)
+        Generate()
         pygame.display.update()
 
         for event in pygame.event.get():
