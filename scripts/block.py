@@ -11,8 +11,8 @@ class Block:
 
 air = Block("Air", "recources/assets/textures/blocks/air.png", 0)
 grass = Block("Grass", "recources/assets/textures/blocks/grass.png", 1)
-dirt = Block("Dirt", "recources/assets/textures/blocks/grass.png", 2)
-stone = Block("Stone", "recources/assets/textures/blocks/grass.png", 3)
+dirt = Block("Dirt", "recources/assets/textures/blocks/dirt.png", 2)
+stone = Block("Stone", "recources/assets/textures/blocks/stone.png", 3)
 
 Blocks = {
 

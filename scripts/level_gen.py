@@ -14,7 +14,6 @@ def generate_level():
                 generate_block_data(x, y, grass.id)
 
 def generate():
-    screen.fill((120, 165, 207))
     for y in range(0, 12):
         for x in range(0, 17):
             create_block(x, y, level[y * 17 + x])
