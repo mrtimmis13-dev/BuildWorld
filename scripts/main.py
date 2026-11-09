@@ -12,11 +12,15 @@ def main():
 
     Set_Window("BuildWorld","recources/assets/textures/icon.png")
 
+    generate_level()
+
+    gen = True
     running = True
     while running:
+        screen.fill((120, 165, 207))
 
-        #screen.blit(grass.texture, (0, 0))
-        Generate()
+        generate()
+
         pygame.display.update()
 
         for event in pygame.event.get():
@@ -30,7 +34,10 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
-                    print(mouse.get_pos())
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    block_mouse_x, block_mouse_y = mouse_x // BLOCK_SIZE, mouse_y // BLOCK_SIZE
+                    set_block(block_mouse_x, block_mouse_y, 0)
+                    generate()
                 elif event.button == 3:
                     print(2)
 
