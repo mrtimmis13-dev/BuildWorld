@@ -10,14 +10,13 @@ from level import *
 def main():
     pygame.init()
 
-    Set_Window("BuildWorld","recources/assets/textures/icon.png")
+    set_window("BuildWorld","recources/assets/textures/icon.png")
 
     generate_level()
 
     gen = True
     running = True
     while running:
-        screen.fill((120, 165, 207))
 
         generate()
 
@@ -34,13 +33,9 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    block_mouse_x, block_mouse_y = mouse_x // BLOCK_SIZE, mouse_y // BLOCK_SIZE
-                    set_block(block_mouse_x, block_mouse_y, 0)
-                    generate()
+                    set_block(get_mouse_pos_x(), get_mouse_pos_y(), 0)
                 elif event.button == 3:
-                    print(2)
-
+                    set_block(get_mouse_pos_x(), get_mouse_pos_y(), 1)
 
 if __name__ == "__main__":
     main()
