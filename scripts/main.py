@@ -1,5 +1,6 @@
 import pygame
 from pygame import mouse
+import math
 
 from scripts import block
 from window import *
@@ -7,6 +8,7 @@ from block import *
 from level_gen import *
 from level import *
 from current_block_ui import *
+from cursor import *
 
 def main():
     pygame.init()
@@ -24,6 +26,7 @@ def main():
         screen.fill((120, 165, 207))
         generate()
         ui(current_block)
+        cursor()
 
         pygame.display.update()
 
@@ -44,7 +47,8 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
-                    set_block(get_mouse_pos_x(), get_mouse_pos_y(), current_block)
+                    if get_block(get_mouse_pos_x(), get_mouse_pos_y()) == 0:
+                        set_block(get_mouse_pos_x(), get_mouse_pos_y(), current_block)
                 elif event.button == 3:
                     set_block(get_mouse_pos_x(), get_mouse_pos_y(), 0)
 
