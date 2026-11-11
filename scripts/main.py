@@ -44,6 +44,10 @@ def main():
                     current_block = 2
                 elif event.key == pygame.K_3:
                     current_block = 3
+                elif event.key == pygame.K_4:
+                    current_block = 4
+                elif event.key == pygame.K_5:
+                    current_block = 5
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
