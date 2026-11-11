@@ -11,6 +11,7 @@ from current_block_ui import *
 from cursor import *
 
 def main():
+
     pygame.init()
 
     set_window("BuildWorld","recources/assets/textures/icon.png")
@@ -25,8 +26,8 @@ def main():
 
         screen.fill((120, 165, 207))
         generate()
-        ui(current_block)
         cursor()
+        ui(current_block)
 
         pygame.display.update()
 

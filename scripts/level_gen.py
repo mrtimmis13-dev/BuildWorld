@@ -4,10 +4,11 @@ import random
 from window import *
 from block import *
 from level import *
+from main import *
 
 def generate_level():
     for y in range(0, 12):
-        for x in range(0, 17):
+        for x in range(0, 34):
             if y <= 6:
                 generate_block_data(x, y, air.id)
             elif y == 7:

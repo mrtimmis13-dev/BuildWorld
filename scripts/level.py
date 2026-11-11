@@ -7,7 +7,7 @@ from window import *
 from block import *
 from config import *
 
-level = np.zeros(204)
+level = np.zeros(408)
 
 def generate_block_data(x, y, block_id):
     level[y * 17 + x] = block_id
