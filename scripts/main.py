@@ -60,6 +60,9 @@ def main():
                         set_block(get_mouse_pos_x(), get_mouse_pos_y(), current_block)
                 elif event.button == 3:
                     set_block(get_mouse_pos_x(), get_mouse_pos_y(), 0)
+                elif event.button == 2:
+                    if get_block(get_mouse_pos_x(), get_mouse_pos_y()) != 0:
+                     current_block = get_block(get_mouse_pos_x(), get_mouse_pos_y())
 
 if __name__ == "__main__":
     main()
