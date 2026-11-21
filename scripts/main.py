@@ -33,10 +33,12 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                save_world()
                 running = False
                 pygame.quit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
+                    save_world()
                     running = False
                     pygame.quit()
                 if event.key == pygame.K_1:
@@ -49,6 +51,8 @@ def main():
                     current_block = 4
                 elif event.key == pygame.K_5:
                     current_block = 5
+                elif event.key == pygame.K_g:
+                    print(level)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
