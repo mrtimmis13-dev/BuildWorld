@@ -1,14 +1,8 @@
-import pygame
-from pygame import mouse
-import math
 
-from scripts import block
-from window import *
-from block import *
 from level_gen import *
 from level import *
-from current_block_ui import *
 from cursor import *
+from inventory import *
 
 def main():
 
@@ -18,16 +12,15 @@ def main():
 
     generate_level()
 
-    gen = True
     running = True
-    current_block = 1
 
     while running:
 
         screen.fill((120, 165, 207))
         generate()
         cursor()
-        ui(current_block)
+
+        inventory_draw()
 
         pygame.display.update()
 
@@ -42,22 +35,20 @@ def main():
                     running = False
                     pygame.quit()
                 if event.key == pygame.K_1:
-                    current_block = 1
+                    set_slot(1)
                 elif event.key == pygame.K_2:
-                    current_block = 2
+                    set_slot(2)
                 elif event.key == pygame.K_3:
-                    current_block = 3
+                    set_slot(3)
                 elif event.key == pygame.K_4:
-                    current_block = 4
+                    set_slot(4)
                 elif event.key == pygame.K_5:
-                    current_block = 5
-                elif event.key == pygame.K_g:
-                    print(level)
+                    set_slot(5)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     if get_block(get_mouse_pos_x(), get_mouse_pos_y()) == 0:
-                        set_block(get_mouse_pos_x(), get_mouse_pos_y(), current_block)
+                        set_block(get_mouse_pos_x(), get_mouse_pos_y(), inventory_slots[current_slot - 1])
                 elif event.button == 3:
                     set_block(get_mouse_pos_x(), get_mouse_pos_y(), 0)
                 elif event.button == 2:
