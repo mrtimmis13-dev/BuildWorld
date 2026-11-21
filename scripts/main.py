@@ -14,11 +14,14 @@ def main():
 
     running = True
 
+    set_slot(1)
+
     while running:
 
         screen.fill((120, 165, 207))
         generate()
         cursor()
+
 
         inventory_draw()
 
@@ -48,12 +51,13 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     if get_block(get_mouse_pos_x(), get_mouse_pos_y()) == 0:
-                        set_block(get_mouse_pos_x(), get_mouse_pos_y(), inventory_slots[current_slot - 1])
+                        set_block(get_mouse_pos_x(), get_mouse_pos_y(), get_slot())
                 elif event.button == 3:
                     set_block(get_mouse_pos_x(), get_mouse_pos_y(), 0)
                 elif event.button == 2:
                     if get_block(get_mouse_pos_x(), get_mouse_pos_y()) != 0:
-                     current_block = get_block(get_mouse_pos_x(), get_mouse_pos_y())
+                        set_slot(int(get_block(get_mouse_pos_x(), get_mouse_pos_y())))
+
 
 if __name__ == "__main__":
     main()
