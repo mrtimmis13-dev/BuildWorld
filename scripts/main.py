@@ -22,7 +22,6 @@ def main():
         generate()
         cursor()
 
-
         inventory_draw()
 
         pygame.display.update()
